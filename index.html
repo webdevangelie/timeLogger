@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Timesheet</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="employee_data">
+        <img src="img/10.JPG" alt="" class="employee_img">
+        <h3 class="employee_name">Jessica Alba</h3>
+        <p class="employee_position">Web Developer</p>
+      </div>
+      <div class="content_button">
+          <p id="dateToday"></p>
+          <div class="displayTime">
+            <button id="timeGetter">Click To Log Time</button>
+          </div>
+          <p id="completed"></p>
+          <div>
+            <ul>
+              <li>In: <span id="in"></span></li>
+              <li>OTL:<span id="otl"></span></li>
+              <li>BFL:<span id="bfl"></span></li>
+              <li>OTL:<span id="out"></span></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="app.js"></script>

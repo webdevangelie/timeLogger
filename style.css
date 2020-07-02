@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  background-image: url('./img/office.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  opacity: .20;
+}
+
+.content {
+  max-width: 50%;
+  display: flex;
+  margin: auto;
+  background-color: rgb(21, 123, 182);
+  padding: 50px;
+  transform: translateY(40%);
+}
+
+.employee_data {
+  padding: 0 50px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.employee_data h3{
+  margin-top: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.employee_img {
+  width: 300px;
+  border-radius: 290px;
+  border: 1px solid black;
+}
+
+button {
+  padding: 10px 45px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: mediumblue;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+button:disabled {
+  background-color: moccasin;
+  color: black;
+  cursor: default;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+.clicked {
+  background-color: #fff;
+  cursor: default;
+}
+
+.content_button p {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 30px;
+}
+
+.displayTime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.displayTime button {
+  margin-right: 10px;
+}
+
+#completed {
+  margin-top: 50px;
+}
+
+ul {
+  border-top: 1px solid black;
+}
+
+li {
+  list-style: none;
+  line-height: 3rem;
+  text-align: left;
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+  border-width: 30%;
+}
+
+li > span {
+  text-align: right;
+  margin-left: 50px;
+  color: #fff;
+  font-weight: bold;
+}
