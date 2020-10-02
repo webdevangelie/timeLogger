@@ -1,68 +1,80 @@
+//Variables
 let dt = new Date();
-let t = dt.getHours();
-let m = dt.getMinutes();
-
+let login = document.getElementById("in");
+let otl = document.getElementById("otl");
+let bfl = document.getElementById("bfl");
+let logout = document.getElementById("out");
+let finish = document.getElementById("completed");
+let name = document.querySelector(".employee_name");
+let color = document.querySelector(".content");
 
 //DISPLAY CURRENT DATE
 let output = document.getElementById("dateToday");
-output.innerHTML = "Today is:     " + dt.toLocaleString();
+output.innerHTML = "Today is: " + dt.toLocaleString();
 
-let time = document.getElementById("timeGetter");
-let login1 = document.getElementById("in");
-let login2 = document.getElementById("otl");
-let login3 = document.getElementById("bfl");
-let login4 = document.getElementById("out");
-let finish = document.getElementById("completed");
+//Login
+login.addEventListener('click', function showTime(){
+  let loginTime = `${dt.getHours()}:${dt.getMinutes()}`;
+  //console.log(loginTime);
+  login.innerHTML = loginTime;
+  login.setAttribute('disabled', true);
+  otl.removeAttribute('disabled');
 
+  //change background-color
+  color.style.backgroundColor = 'brown';
 
-time.addEventListener('click', getTime);
+  // Save in LS
+  localStorage.setItem('login', loginTime);
+});
 
-function getTime(e){
-  const timeStamp = t + ":" + m;
+//OTL
+otl.addEventListener('click', function showTime(){
+  let otlTime = `${dt.getHours()}:${dt.getMinutes()}`;
+  //console.log(loginTime);
+  otl.innerHTML = otlTime;
+  otl.setAttribute('disabled', true);
+  bfl.removeAttribute('disabled');
 
-  let timeStamps;
+  //change background-color
+  color.style.backgroundColor = 'salmon';
 
-  if(localStorage.getItem('time stamps') === null) {
-    timeStamps = [];
-  } else {
-    timeStamps = JSON.parse(localStorage.getItem('time stamps'));
-  }
+  // Save in LS
+  localStorage.setItem('otl', otlTime);
+});
 
-  alert('Time recorded');
+//BFL
+bfl.addEventListener('click', function showTime(){
+  let bflTime = `${dt.getHours()}:${dt.getMinutes()}`;
+  //console.log(loginTime);
+  bfl.innerHTML = bflTime;
+  bfl.setAttribute('disabled', true);
+  logout.removeAttribute('disabled');
 
-  timeStamps.push(timeStamp);
- 
-  localStorage.setItem('time stamps', JSON.stringify(timeStamps))
+  //change background-color
+  color.style.backgroundColor = 'orange';
 
-  console.log(timeStamps[0]);
+  // Save in LS
+  localStorage.setItem('bfl', bflTime);
+});
 
-  login1.innerHTML = timeStamps[0];
-  login2.innerHTML = timeStamps[1];
-  login3.innerHTML = timeStamps[2];
-  login4.innerHTML = timeStamps[3];
+//Logout
+//BFL
+logout.addEventListener('click', function showTime(){
+  let logoutTime = `${dt.getHours()}:${dt.getMinutes()}`;
+  //console.log(loginTime);
+  logout.innerHTML = logoutTime;
+  logout.setAttribute('disabled', true);
 
-};
+  // Save in LS
+  localStorage.setItem('logout', logoutTime);
 
-// document.addEventListener('DOMContentLoaded', getTimes) {
-//   if(localStorage.getItem('time stamps') === null) {
-//     timeStamps = [];
-//   } else {
-//     timeStamps = JSON.parse(localStorage.getItem('time stamps'));
-//   }
-// }
+  //change background-color
+  color.style.backgroundColor = 'green';
 
-// const times = JSON.parse(localStorage.getItem('time stamps'));
- 
- 
-// function getTimes() {
-//   times.forEach(function(time){
-//     login1.innerHTML = times[0];
-//     login2.innerHTML = times[1];
-//     login3.innerHTML = times[2];
-//     login4.innerHTML = times[3];
-//   });
-// }
+    // Good day message
+    finish.innerText = 'Have a good day!';
+});
 
-
+//Clear local storage
 
 
